@@ -104,7 +104,7 @@ Product features used:
 
 Recommendation models were evaluated using:
 
-### Precision@K ### Recall@K
+### Precision@K Recall@K
 
 
 Evaluation performed using **K = 5**.
