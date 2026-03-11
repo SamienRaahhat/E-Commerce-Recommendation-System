@@ -1,8 +1,113 @@
-# E-Commerce Recommendation System
-Problem Statement
+# E-Commerce-Recommendation-System
 
-Modern e-commerce platforms host thousands of products across multiple categories, making it difficult for users to discover items relevant to their interests. Without effective recommendation systems, users may struggle to find suitable products, leading to reduced engagement and lower conversion rates.
+Simulated e-commerce interaction data to build and evaluate recommendation algorithms including popularity-based, collaborative filtering, content-based filtering, and matrix factorization models.
 
-The objective of this project is to build and evaluate multiple recommendation system approaches to predict products a user is most likely to interact with based on historical interaction data and product attributes.
+# 🛍️ E-Commerce Product Recommendation System
 
-This project simulates user-product interactions and explores different recommendation strategies to understand how each approach performs in recommending relevant products.
+An analytics & machine learning project that simulates user-product interactions and builds multiple recommendation algorithms to suggest relevant products to users.
+
+The project evaluates recommendation performance using Precision@K and Recall@K metrics and compares different approaches used in real-world recommendation engines.
+
+---
+
+## 🔧 Tools Used
+
+- Jupyter Notebook
+- Python (pandas, numpy, faker, scikit-learn, matplotlib, seaborn)
+
+---
+
+## 📂 Simulated Dataset
+
+| File | Description |
+|-----|-------------|
+| `ecommerce_interactions.csv` | Simulated user-product interactions |
+| `products.csv` | Product catalog with attributes |
+| `users.csv` | Simulated user dataset |
+
+Dataset fields include:
+
+- user_id
+- product_id
+- category
+- brand
+- price
+- rating
+- interaction_type
+- interaction_score
+- timestamp
+
+Interaction scores were assigned based on engagement level:
+
+| Interaction | Score |
+|------------|------|
+| View | 1 |
+| Add to Cart | 3 |
+| Purchase | 5 |
+
+---
+
+## 📊 Exploratory Data Analysis
+
+EDA was performed to understand product engagement and user interaction behavior.
+
+Analysis includes:
+
+- Category-wise product interactions
+- Top brands by engagement
+- Interaction type distribution
+- Price distribution
+- User activity levels
+- Most popular products
+- Interaction trends over time
+
+Visualizations were created using **Seaborn and Matplotlib**.
+
+---
+
+## 🧠 Recommendation Algorithms
+
+The following recommendation approaches were implemented.
+
+### 1️⃣ Popularity-Based Model
+
+Recommends products with the highest overall interaction score.
+
+Used as a baseline model.
+
+---
+
+### 2️⃣ Collaborative Filtering
+
+User similarity based recommendation using cosine similarity.
+
+Users with similar interaction patterns are used to recommend products.
+
+---
+
+### 3️⃣ Content-Based Filtering
+
+Recommends products similar to items the user has interacted with.
+
+Product features used:
+
+- category
+- brand
+- price
+- rating
+
+---
+
+### 4️⃣ Matrix Factorization (SVD)
+
+Latent factor model using Truncated SVD.
+
+Learns hidden relationships between users and products from the interaction matrix.
+
+---
+
+## 📏 Model Evaluation
+
+Recommendation models were evaluated using:
+
+### Precision@K
