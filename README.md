@@ -1,8 +1,16 @@
-# E-Commerce-Recommendation-System
-The objective of this project is to build and evaluate multiple Recommendation Systems to predict products a user is most likely to interact with based on historical interaction data and product attributes.
-# E-Commerce-Recommendation-System
+# Problem Statement
+Modern E-commerce platforms host thousands of products across multiple categories, making it difficult for users to discover items relevant to their interests. Without effective recommendation systems, users may struggle to find suitable products, leading to reduced engagement and lower conversion rates.
 
-Simulated e-commerce interaction data to build and evaluate recommendation algorithms including popularity-based, collaborative filtering, content-based filtering, and matrix factorization models.
+# Objective
+The objective of this project is to build and evaluate multiple Recommendation Systems to predict products a user is most likely to interact with based on historical interaction data and product attributes.
+
+# Deliverables
+- Simulate a realistic e-commerce interaction dataset
+- Perform Exploratory Data Analysis (EDA) on user behavior and product interactions
+- Implement multiple recommendation algorithms
+- Evaluate recommendation performance using Precision@K and Recall@K
+- Compare algorithm effectiveness
+
 
 # 🛍️ E-Commerce Product Recommendation System
 
@@ -15,7 +23,7 @@ The project evaluates recommendation performance using Precision@K and Recall@K 
 ## 🔧 Tools Used
 
 - Jupyter Notebook
-- Python (pandas, numpy, faker, scikit-learn, matplotlib, seaborn)
+- Python (Pandas, Machine Learning, Numpy, Faker, Scikit-learn, Matplotlib, Seaborn)
 
 ---
 
@@ -38,14 +46,6 @@ Dataset fields include:
 - interaction_type
 - interaction_score
 - timestamp
-
-Interaction scores were assigned based on engagement level:
-
-| Interaction | Score |
-|------------|------|
-| View | 1 |
-| Add to Cart | 3 |
-| Purchase | 5 |
 
 ---
 
@@ -100,16 +100,37 @@ Product features used:
 
 ---
 
-### 4️⃣ Matrix Factorization (SVD)
-
-Latent factor model using Truncated SVD.
-
-Learns hidden relationships between users and products from the interaction matrix.
-
----
-
 ## 📏 Model Evaluation
 
 Recommendation models were evaluated using:
 
-### Precision@K
+### Precision@K ### Recall@K
+
+
+Evaluation performed using **K = 5**.
+
+---
+
+## 📈 Model Performance
+
+| Model | Precision@5 | Recall@5 |
+|------|-------------|---------|
+| Popularity | 0.015 | 0.015 |
+| Collaborative Filtering | 0.015 | 0.016 |
+| Content-Based Filtering | 0.018 | 0.019 |
+
+---
+
+## 🔍 Key Insights
+
+- Content-Based Recommender performed the best(Precision=0.018, Recall=0.019) and Popularity Recommender the worst(Precision = 0.0.15, Recall = 0.015). This is completely normal for synthetic datasets created with random behavior.
+- This dataset was generated using Faker, so user preferences are mostly random. There is no strong pattern for the model to learn.
+- Recommendation problems are very sparse which makes the problem very hard to be hard solved unless you have enough and clear data to evaluate on.
+- Real-world recommendation systems typically perform better when trained on real behavioral data.On real Streaming or E-commerce platforms like Netflix, Spotify, Flipkart or Myntra; there are millions of users, strong behavioral signals, repeated purchases, clear product clusters. Hence their metrics are higher.
+
+---
+
+## 🙌 Credits
+
+Made with Intent,  
+**Shaik Samien Raahhat**
